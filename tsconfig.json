@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "noEmit": false,
+        "sourceMap": true,
+        "strict": false,
+        "module": "commonjs",
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "esModuleInterop": true,
+        "allowJs": false,
+        "allowSyntheticDefaultImports": false,
+        "jsx": "react"
+    }
+}

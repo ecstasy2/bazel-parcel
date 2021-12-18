@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    ".ijwb": true,
+    "bazel-*": true,
+    "dist/": true,
+    "yarn-error.log": true
+  }
+}

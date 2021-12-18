@@ -1,0 +1,12 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("//builddefs:index.bzl", "rasta_js_package")
+
+rasta_js_package(
+    visibility = ["//visibility:public"],
+    deps = [
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//@atlaskit/button",
+        "@npm//styled-components",
+    ]
+)

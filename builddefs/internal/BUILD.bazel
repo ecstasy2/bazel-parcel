@@ -1,0 +1,8 @@
+
+exports_files([
+  "parcel.bzl", 
+  "js_library.bzl", 
+  "js_package.bzl", 
+  "require.js", 
+  "launcher_template.sh"
+])

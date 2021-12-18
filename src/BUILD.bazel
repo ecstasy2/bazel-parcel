@@ -1,0 +1,46 @@
+
+load("//builddefs:index.bzl", "parcel_devserver", "rasta_js_package")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+
+
+rasta_js_package(
+    srcs = ["index.tsx"],
+    tsconfig = '//:tsconfig.json',
+    deps_package = [
+        "//src/components"
+    ],
+    deps = [
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//@atlaskit/button",
+        "@npm//@atlaskit/navigation-next",
+        "@npm//@atlaskit/global-navigation",
+        "@npm//@atlaskit/logo",
+        "@npm//@atlaskit/spinner",
+        "@npm//styled-components",
+        "@npm//@types",
+   ],
+)
+
+filegroup(
+    name = "assets",
+    srcs = ["styles.css"],
+)
+
+parcel_devserver(
+    name = "devserver",
+    index_html = ":index.html",
+    static_files = [
+        ":index.html",
+    ],
+    deps = [
+        ":all_sources",
+        ":assets",
+    ],
+    data = [
+        "//:package.json",
+        "//:yarn.lock",
+        "//:tsconfig.json",
+        # "//:node_modules",
+    ]
+)
